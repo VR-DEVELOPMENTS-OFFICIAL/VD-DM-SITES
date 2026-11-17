@@ -12,7 +12,7 @@
    [data-progress-for="name"] progress bar for that checklist
    [data-reset="name"]      clears that checklist
    [data-calc="weekly"|"monthly"] price calculator form
-   tr[data-day="Monday"]    timetable row to highlight on that day
+   tr[data-step="0"]        plan row (0 to 6), highlighted on the visitor day that matches
    [data-filter="cat"]      filter tab (idea list)
    [data-cat="cat"]         idea card belonging to a category
    [data-save="id"]         save-idea toggle button
@@ -297,21 +297,31 @@
     }
   }
 
-  /* ---------- 6. Timetable: highlight today ---------- */
+  /* ---------- 6. Plan days: highlight the visitor's current day ---------- */
   function initToday() {
-    var rows = document.querySelectorAll('tr[data-day]');
+    var rows = document.querySelectorAll('tr[data-step]');
     if (!rows.length) return;
-    var names = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    var today = names[new Date().getDay()];
+    var key = 'vrd-start:' + location.pathname;
+    var dayMs = 86400000;
+    var now = new Date();
+    var todayNum = Math.floor((now.getTime() - now.getTimezoneOffset() * 60000) / dayMs);
+    var startNum = todayNum;
+    try {
+      var saved = parseInt(localStorage.getItem(key), 10);
+      if (isNaN(saved)) localStorage.setItem(key, String(todayNum));
+      else startNum = saved;
+    } catch (e) {}
+    var step = todayNum - startNum;
+    if (step < 0) step = 0;
 
     for (var i = 0; i < rows.length; i++) {
-      if (rows[i].getAttribute('data-day') !== today) continue;
+      if (parseInt(rows[i].getAttribute('data-step'), 10) !== step) continue;
       rows[i].classList.add('is-today');
       var head = rows[i].querySelector('th') || rows[i].querySelector('td');
       if (head) {
         var badge = document.createElement('span');
         badge.className = 'today-badge';
-        badge.textContent = 'Today';
+        badge.textContent = 'You are here';
         head.appendChild(badge);
       }
     }
