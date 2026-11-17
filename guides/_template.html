@@ -1,0 +1,191 @@
+<!doctype html>
+<!--
+  ==========================================================================
+  TEMPLATE FOR A NEW DAILY GUIDE. Copy this file, do not edit it in place.
+
+  How to use it:
+  1. Copy this file to guides/epN-your-topic.html (for example ep3-your-topic.html).
+     Use lowercase letters, numbers and hyphens only. Keep the name short.
+  2. Replace every [square-bracket] placeholder below with your real text.
+  3. Set the <title>, the meta description and the kicker (Episode number).
+  4. Keep the relative paths: ../assets/style.css, ../assets/app.js and ../index.html.
+     Do not add links to external scripts, fonts or CDNs.
+  5. Keep the brand spot in the header and the footer (VR Developments).
+     Keep the footer disclaimer: "Examples are only examples, not income promises."
+  6. Add a card for the guide at the top of the list in index.html (see the
+     "guide card" comment in index.html). Only add a Telugu link if a Telugu page
+     exists. Never link to a page that is not in the repository.
+  7. Delete every comment block like this one before you publish, and delete
+     the robots meta tag below. This template must stay out of search results
+     until it is replaced.
+
+  Interactive features you can switch on (all optional, delete what you do not need):
+  - Copy button: <button data-copy-target="ID"> plus a box with id="ID".
+    The box text is copied with each <p> on its own line.
+  - Checklist with progress bar: <ul class="checklist" data-checklist="NAME">
+    plus a <div class="progress" data-progress-for="NAME"> and a reset button
+    with data-reset="NAME". Use a unique NAME for each checklist on the page.
+    Ticks are saved in the reader's browser.
+  - Price calculator: <div class="calc" data-calc="weekly"> (or "monthly") with
+    two number inputs named "first" and "second" and an element with
+    data-calc-out. Output = first × second. Always label it as an example.
+  - Timetable highlight: a table row with data-day="Monday" (use the full English
+    day name). Today's row is highlighted automatically.
+  - Idea filter: filter tabs with data-filter="category", and idea cards with
+    data-cat="category". Save-idea toggles use data-save="unique-id".
+  - Scroll reveal: add data-reveal to any section or card.
+  - Animated number: <strong data-count="15">15</strong> (the number inside is the
+    final value, so the page still reads correctly without JavaScript).
+  ==========================================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17262B">
+  <!-- REMOVE this robots tag when the guide is ready to be found. -->
+  <meta name="robots" content="noindex">
+  <!-- Title: the guide name, then the brand. Example: "[Guide name] | VR Developments" -->
+  <title>[Guide title] | VR Developments</title>
+  <!-- One or two sentences that say what the reader gets. Shown in search results. -->
+  <meta name="description" content="[One or two sentences describing what the reader will get from this guide.]">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script src="../assets/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-strip" aria-hidden="true"></div>
+    <div class="wrap">
+      <!-- BRAND SPOT: keep this on every page. Logo swap: see the note in index.html. -->
+      <a class="brand" href="../index.html">
+        <img class="brand-logo" src="../assets/logo.jpg" alt="VR Developments logo" width="40" height="40">
+        <span class="brand-word"><span class="brand-vr">VR</span> Developments</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Page intro. The kicker names the series and the episode, e.g. "Episode 3 · How to Earn Money series". -->
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="hero-kicker rise">Episode [N] · How to Earn Money series</p>
+      <h1 class="rise rise-2">[Guide title]</h1>
+      <!-- One short paragraph: who this is for and what they will leave with. -->
+      <p class="lead rise rise-3">[Lead paragraph: who this is for and the one result they get.]</p>
+    </div>
+  </section>
+
+  <main class="wrap prose">
+    <article>
+
+      <!-- SECTION PATTERN: one <section data-reveal> per step, with a clear h2.
+           Use h3 for smaller parts inside a section. Keep each step short. -->
+      <section data-reveal>
+        <h2>1. [First step or idea]</h2>
+        <p>[Explain the step in plain words. Short sentences work best.]</p>
+        <!-- Optional note box for tips and warnings. -->
+        <div class="note">
+          <p>[A helpful tip, or a warning such as a licence or safety point.]</p>
+        </div>
+      </section>
+
+      <section data-reveal>
+        <h2>2. [Second step]</h2>
+        <p>[Explain the step.]</p>
+        <ol>
+          <li>[Do this first.]</li>
+          <li>[Then do this.]</li>
+          <li>[Finish with this.]</li>
+        </ol>
+      </section>
+
+      <!-- COPY BOX PATTERN: a message or script the reader can copy.
+           Give the box an id and point the button at it. Each <p> is copied on its own line. -->
+      <section data-reveal>
+        <h2>3. [Message or script to copy]</h2>
+        <div class="box" id="template-message">
+          <span class="box-label">[Label, e.g. Review message]</span>
+          <p>[Hi [name], ... Write the message here. Use square brackets for the parts the reader must change.]</p>
+        </div>
+        <p>
+          <button type="button" class="button alt" data-copy-target="template-message">Copy message</button>
+          <span class="copy-status" aria-live="polite"></span>
+        </p>
+      </section>
+
+      <!-- EXAMPLE PATTERN: any money figure must be labelled as an example.
+           Keep the sentence "Example only ... This is not an income promise." -->
+      <section data-reveal>
+        <h2>4. [Pricing or numbers, if the guide needs them]</h2>
+        <p class="example">Example only: [number] × [number] = [result]. Your numbers will be different. This is not an income promise.</p>
+        <div class="calc" data-calc="weekly">
+          <label>[Your rate or price (₹)]
+            <input type="number" name="first" min="0" step="1" value="[starting value]" inputmode="decimal">
+          </label>
+          <label>[How many per week or month]
+            <input type="number" name="second" min="0" step="1" value="[starting value]" inputmode="decimal">
+          </label>
+          <!-- Change data-calc to "monthly" if the result is per month. -->
+          <p class="calc-result" data-calc-out aria-live="polite">[Result]</p>
+          <p class="calc-note">Only an example. Type your own numbers to test them. This is not an income promise.</p>
+        </div>
+      </section>
+
+      <!-- CHECKLIST PATTERN: a tick-able list with a progress bar. Each checkbox needs a unique value.
+           Change data-checklist and data-progress-for and data-reset to the same unique NAME. -->
+      <section data-reveal>
+        <h2>5. Your checklist</h2>
+        <p class="reveal-note">Tick each point as you finish it. Your ticks are saved in this browser.</p>
+        <ul class="checklist" data-checklist="template">
+          <li><label><input type="checkbox" value="item-1"><span class="step-text">[First thing to do]</span></label></li>
+          <li><label><input type="checkbox" value="item-2"><span class="step-text">[Second thing to do]</span></label></li>
+          <li><label><input type="checkbox" value="item-3"><span class="step-text">[Third thing to do]</span></label></li>
+        </ul>
+        <div class="progress" data-progress-for="template">
+          <div class="progress-track" role="progressbar" aria-label="Checklist progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="progress-bar"></div>
+          </div>
+          <p class="progress-text" aria-live="polite">0 of 3 done (0%)</p>
+          <button type="button" class="reset-btn" data-reset="template">Clear checklist</button>
+        </div>
+      </section>
+
+      <!-- TIMETABLE PATTERN (optional): full English day names in data-day, so today's row is highlighted.
+           Delete this block if the guide does not need a timetable. -->
+      <section data-reveal>
+        <h2>6. A simple timetable</h2>
+        <p class="reveal-note">The row for today is highlighted.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th scope="col">Day</th><th scope="col">What to do</th></tr>
+            </thead>
+            <tbody>
+              <tr data-day="Monday"><th scope="row">Monday</th><td>[Task]</td></tr>
+              <tr data-day="Tuesday"><th scope="row">Tuesday</th><td>[Task]</td></tr>
+              <tr data-day="Wednesday"><th scope="row">Wednesday</th><td>[Task]</td></tr>
+              <tr data-day="Thursday"><th scope="row">Thursday</th><td>[Task]</td></tr>
+              <tr data-day="Friday"><th scope="row">Friday</th><td>[Task]</td></tr>
+              <tr data-day="Saturday"><th scope="row">Saturday</th><td>[Task]</td></tr>
+              <tr data-day="Sunday"><th scope="row">Sunday</th><td>[Task]</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </article>
+
+    <p class="back"><a href="../index.html">← Back to all free guides</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p><a class="brand" href="../index.html">
+        <img class="brand-logo" src="../assets/logo.jpg" alt="VR Developments logo" width="40" height="40">
+        <span class="brand-word"><span class="brand-vr">VR</span> Developments</span>
+      </a></p>
+      <p>Free guides for the How to Earn Money series.</p>
+      <p class="disclaimer">Examples are only examples, not income promises.</p>
+    </div>
+  </footer>
+</body>
+</html>
