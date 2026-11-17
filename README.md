@@ -65,7 +65,7 @@ Never add the link before the file exists, because it would be a broken link. Th
 | Copy button | `<button data-copy-target="ID">` and a box with `id="ID"` | Copies the box text, one line per `<p>`. Falls back to older browsers |
 | Checklist | `<ul class="checklist" data-checklist="NAME">` with `data-progress-for="NAME"` and `data-reset="NAME"` | Ticks and progress bar, saved in the reader's browser (localStorage) |
 | Price calculator | `<div class="calc" data-calc="weekly">` or `"monthly"` with inputs `first` and `second` | Multiplies the two numbers and shows the result in rupees. Always label it "only an example" |
-| Timetable | `<tr data-day="Monday">` (full English day name) | Highlights today's row |
+| 7-day plan | `<tr data-step="0">` (0 to 6, labelled Today, Tomorrow, Day after tomorrow, 3 days later...) | Day 0 is the visitor's first open; highlights their current day |
 | Idea filter | Tabs with `data-filter="category"` and cards with `data-cat="category"` | Filters the cards. Arrow keys move between tabs |
 | Saved ideas | `<button class="save-btn" data-save="ID">` and a count with `data-saved-count` | Heart toggle, saved in the browser |
 
