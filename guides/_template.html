@@ -29,7 +29,7 @@
   - Price calculator: <div class="calc" data-calc="weekly"> (or "monthly") with
     two number inputs named "first" and "second" and an element with
     data-calc-out. Output = first × second. Always label it as an example.
-  - Timetable highlight: a table row with data-day="Monday" (use the full English
+  - Timetable highlight: a table row with data-step="0" (0 to 6, day 0 is the first open
     day name). Today's row is highlighted automatically.
   - Idea filter: filter tabs with data-filter="category", and idea cards with
     data-cat="category". Save-idea toggles use data-save="unique-id".
@@ -149,24 +149,24 @@
         </div>
       </section>
 
-      <!-- TIMETABLE PATTERN (optional): full English day names in data-day, so today's row is highlighted.
+      <!-- TIMETABLE PATTERN (optional): data-step 0 to 6 with labels Today, Tomorrow, Day after tomorrow, 3 days later and so on; the visitor's current day is highlighted.
            Delete this block if the guide does not need a timetable. -->
       <section data-reveal>
-        <h2>6. A simple timetable</h2>
-        <p class="reveal-note">The row for today is highlighted.</p>
+        <h2>6. Your first 7 days</h2>
+        <p class="reveal-note">Day one starts the day you first open this page. The row for your current day is highlighted.</p>
         <div class="table-wrap">
           <table>
             <thead>
-              <tr><th scope="col">Day</th><th scope="col">What to do</th></tr>
+              <tr><th scope="col">When</th><th scope="col">What to do</th></tr>
             </thead>
             <tbody>
-              <tr data-day="Monday"><th scope="row">Monday</th><td>[Task]</td></tr>
-              <tr data-day="Tuesday"><th scope="row">Tuesday</th><td>[Task]</td></tr>
-              <tr data-day="Wednesday"><th scope="row">Wednesday</th><td>[Task]</td></tr>
-              <tr data-day="Thursday"><th scope="row">Thursday</th><td>[Task]</td></tr>
-              <tr data-day="Friday"><th scope="row">Friday</th><td>[Task]</td></tr>
-              <tr data-day="Saturday"><th scope="row">Saturday</th><td>[Task]</td></tr>
-              <tr data-day="Sunday"><th scope="row">Sunday</th><td>[Task]</td></tr>
+              <tr data-step="0"><th scope="row">Today</th><td>[Task]</td></tr>
+              <tr data-step="1"><th scope="row">Tomorrow</th><td>[Task]</td></tr>
+              <tr data-step="2"><th scope="row">Day after tomorrow</th><td>[Task]</td></tr>
+              <tr data-step="3"><th scope="row">3 days later</th><td>[Task]</td></tr>
+              <tr data-step="4"><th scope="row">4 days later</th><td>[Task]</td></tr>
+              <tr data-step="5"><th scope="row">5 days later</th><td>[Task]</td></tr>
+              <tr data-step="6"><th scope="row">6 days later</th><td>[Task]</td></tr>
             </tbody>
           </table>
         </div>
