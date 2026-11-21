@@ -554,7 +554,8 @@ tr.is-today th { box-shadow: inset 4px 0 0 var(--yellow); }
   box-shadow: var(--shadow);
 }
 .calc label { display: grid; gap: 0.3rem; font-weight: 700; }
-.calc input[type="number"] {
+.calc input[type="number"],
+.calc select {
   width: 100%;
   min-height: 44px;
   padding: 0.5rem 0.75rem;
@@ -566,7 +567,8 @@ tr.is-today th { box-shadow: inset 4px 0 0 var(--yellow); }
   border-radius: 12px;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-.calc input[type="number"]:focus {
+.calc input[type="number"]:focus,
+.calc select:focus {
   outline: none;
   border-color: var(--teal);
   box-shadow: 0 0 0 4px rgba(46, 196, 182, 0.25);
